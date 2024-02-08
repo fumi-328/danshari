@@ -65,3 +65,6 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+# 日本語化対応
+gem 'rails-i18n', '~> 7.0.0'

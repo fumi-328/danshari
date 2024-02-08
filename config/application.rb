@@ -21,7 +21,18 @@ module RailsApp
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
-    # config.time_zone = "Central Time (US & Canada)"
+    config.time_zone = 'Tokyo'
+    config.active_recode.default_timezone = :local
+    config.i18n.default_locale = :ja
+
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
+
     # config.eager_load_paths << Rails.root.join("extras")
+    config.generators do |g|
+      g.helper false          # ヘルパーファイルを生成しない
+      g.assets false          # CSSやJavaScriptファイルを生成しない
+      g.skip_routes true      # ルーティングを生成しない
+      g.test_framework false  # テストファイルを生成しない
+    end
   end
 end
