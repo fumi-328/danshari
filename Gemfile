@@ -58,8 +58,8 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
-  gem 'rubocop', require:false
-  gem 'rubocop-rails', require:false  
+  gem "rubocop", require:false
+  gem "rubocop-rails", require:false  
 end
 
 group :test do
@@ -69,4 +69,9 @@ group :test do
 end
 
 # 日本語化対応
-gem 'rails-i18n', '~> 7.0.0'
+gem "rails-i18n", "~> 7.0.0"
+
+gem "bootstrap-sass"
+gem "sassc-rails"
+gem "dartsass-rails", "~> 0.4.0"
+gem "bootstrap-sass"
