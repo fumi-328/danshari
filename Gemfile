@@ -76,3 +76,5 @@ gem 'rails-i18n', '~> 7.0.0'
 gem 'bootstrap-sass'
 gem 'dartsass-rails', '~> 0.4.0'
 gem 'sassc-rails'
+
+gem "cssbundling-rails", "~> 1.4"
