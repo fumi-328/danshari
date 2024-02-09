@@ -62,6 +62,8 @@ group :development do
   # gem "spring"
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
+
+  gem 'bullet'
 end
 
 group :test do
@@ -77,4 +79,12 @@ gem 'bootstrap-sass'
 gem 'dartsass-rails', '~> 0.4.0'
 gem 'sassc-rails'
 
-gem "cssbundling-rails", "~> 1.4"
+gem 'cssbundling-rails', '~> 1.4'
+
+gem 'devise'
+
+gem 'omniauth-line'
+gem 'omniauth-rails_csrf_protection'
+gem 'omniauth', '~> 1.9.1'
+
+gem 'dotenv-rails'

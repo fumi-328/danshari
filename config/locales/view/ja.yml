@@ -1,1 +1,6 @@
 ja:
+  header:
+    login: ログイン/登録
+    post_index: 一覧
+    create_post: 投稿
+    mypage: マイページ
