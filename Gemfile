@@ -80,3 +80,8 @@ gem 'sassc-rails'
 gem 'cssbundling-rails', '~> 1.4'
 
 gem 'devise'
+
+gem 'omniauth-line'
+gem 'omniauth-rails_csrf_protection'
+
+gem 'dotenv-rails'
