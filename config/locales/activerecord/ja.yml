@@ -1,4 +1,9 @@
 ja:
   activerecord:
-   models:
-   
+    models:
+      user: ユーザー
+      post: 断捨離memo
+    attributes:
+      post:
+        title: 名称
+        body: なぜ捨てる？

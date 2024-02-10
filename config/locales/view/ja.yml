@@ -4,3 +4,11 @@ ja:
     post_index: 一覧
     create_post: 投稿
     mypage: マイページ
+  defaults:
+    flash_message:
+      created: "%{item}を作成しました"
+      not_created: "%{item}を作成出来ませんでした"
+      require_login: ログインしてください
+  posts:
+    new:
+      title: 断捨離memo作成
