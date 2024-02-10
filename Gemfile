@@ -88,3 +88,5 @@ gem 'omniauth-rails_csrf_protection'
 gem 'omniauth', '~> 1.9.1'
 
 gem 'dotenv-rails'
+
+gem 'carrierwave', '~> 3.0'
