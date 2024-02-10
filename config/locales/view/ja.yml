@@ -1,4 +1,7 @@
 ja:
+  helpers:
+    submit:
+      create: 断捨離を始める
   header:
     login: ログイン/登録
     post_index: 一覧

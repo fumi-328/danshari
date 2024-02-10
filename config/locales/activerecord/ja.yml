@@ -5,5 +5,7 @@ ja:
       post: 断捨離memo
     attributes:
       post:
+        post_image: 画像
         title: 名称
         body: なぜ捨てる？
+        deadline: 期限日

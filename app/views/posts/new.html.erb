@@ -3,14 +3,23 @@
     <div class="col-lg-8 offset-lg-2">
       <%= form_with model: @post, class: "new_post" do |f| %>
         <div class="mb-3">
-          <%= f.label :title %>
+        	<%= f.label :post_image %>
+        	<%= f.file_field :post_image, class: "form-control", accept: 'image/*' %>
+        	<%= f.hidden_field :post_image_cache %>
+      	</div>
+        <div class="mb-3">
+          <%= f.label :title %><span class="text-danger small" >*必須</span>
           <%= f.text_field :title, class: "form-control" %>
         </div>
         <div class="mb-3">
-          <%= f.label :body %>
+          <%= f.label :body %><span class="text-danger small" >*必須</span>
           <%= f.text_area :body, class: "form-control", rows: "10" %>
         </div>
-        <%= f.submit nil, class: "btn btn-primary" %>
+				<div class="mb-3">
+					<%= f.label :deadline %>
+					<%= f.date_field :deadline, class: "form-control" %>
+				</div>
+        <%= f.submit nil, class: "btn btn-outline-primary btn-lg" %>
       <% end %>
     </div>
   </div>
