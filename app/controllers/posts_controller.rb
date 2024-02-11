@@ -3,9 +3,9 @@ class PostsController < ApplicationController
 
   def index
     if user_signed_in?
-      @posts = Post.includes(:user)
+      @posts = Post.includes(:user).page(params[:page])
     else
-      @posts = Post.all
+      @posts = Post.all.page(params[:page])
     end
   end
 

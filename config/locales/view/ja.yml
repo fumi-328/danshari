@@ -23,3 +23,10 @@ ja:
       title: memo作成
     dit:
       title: memo編集
+  views:
+    pagination:
+      first: "<<"
+      last: ">>"
+      previous: "<" 
+      next: ">"
+      truncate: "..."
