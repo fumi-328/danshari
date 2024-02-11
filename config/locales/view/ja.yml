@@ -21,12 +21,12 @@ ja:
   posts:
     new:
       title: memo作成
-    dit:
+    edit:
       title: memo編集
   views:
     pagination:
-      first: "<<"
-      last: ">>"
-      previous: "<" 
-      next: ">"
+      first: <i class="bi bi-skip-backward-fill"></i>
+      last: <i class="bi bi-skip-forward-fill"></i>
+      previous: <i class="bi bi-skip-start-fill"></i>
+      next: <i class="bi bi-skip-end-fill"></i>
       truncate: "..."
