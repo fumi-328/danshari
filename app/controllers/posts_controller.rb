@@ -1,8 +1,12 @@
 class PostsController < ApplicationController
 	before_action :authenticate_user!, only: %i[new create edit update destroy]
 
-	def index
-    @posts = Post.includes(:user)
+  def index
+    if user_signed_in?
+      @posts = Post.includes(:user)
+    else
+      @posts = Post.all
+    end
   end
 
 	def new
@@ -42,6 +46,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body)
+    params.require(:post).permit(:title, :body, :post_image, :post_image_cache)
   end
 end
