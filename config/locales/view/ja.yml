@@ -20,6 +20,8 @@ ja:
       deleted: "%{item}を削除しました"
       require_login: ログインしてください
   posts:
+    index:
+      title: 一覧
     new:
       title: memo作成
     edit:
