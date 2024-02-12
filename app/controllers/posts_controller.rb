@@ -3,11 +3,7 @@ class PostsController < ApplicationController
   
   def index
     @q = Post.ransack(params[:q])
-    if user_signed_in?
-      @posts = @q.result.includes(:user).page(params[:page]).order("created_at desc")
-    else
-      @posts = @q.result.page(params[:page]).order("created_at desc")
-    end
+    @posts = @q.result.includes(:user).page(params[:page]).order("created_at desc")
   end
 
 
@@ -43,6 +39,12 @@ class PostsController < ApplicationController
     post = current_user.posts.find(params[:id])
     post.destroy!
     redirect_to posts_path, success: t('defaults.flash_message.deleted', item: Post.model_name.human), status: :see_other
+  end
+
+  def change_discard_flag
+    @post = Post.find(params[:id])
+    @post.update(discard_flag: true)
+    redirect_to @post, success: t('defaults.flash_message.discard_flag', item: Post.model_name.human)
   end
 
   private

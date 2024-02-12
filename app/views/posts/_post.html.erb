@@ -26,14 +26,15 @@
           </ul>
           <div class='d-flex my-auto '>
 
-          <% if current_user && current_user.own?(post) %>
-            <div class="me-auto">
-              <%= button_tag type: "button", class: "btn btn-secondary btn-lg btn-secondary" do %>
-                <i class="bi bi-stars" style="font-size: 2.5rem; color: yellow;"></i>
-                断捨離完了
-              <% end %>
-            </div>
+          <% if !post.discard_flag && current_user == post.user %>
+          <div class="me-auto">
+          <%= button_to change_discard_flag_post_path(post), method: :patch, class: "btn btn-secondary btn-lg", data: { turbo_confirm: t('defaults.discard_flag_confirm') } do %>
+            <i class="bi bi-stars" style="font-size: 2.5rem; color: yellow;"></i>
+            断捨離完了
           <% end %>
+        </div>
+        <% end %>
+        
 
           <div class="ms-auto">
             <%= link_to '#' do %>

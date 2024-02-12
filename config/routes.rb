@@ -14,5 +14,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root 'static_pages#top'
 
-  resources :posts
+  resources :posts do
+    member do
+      patch :change_discard_flag
+    end
+  end
 end

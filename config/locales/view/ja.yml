@@ -12,6 +12,7 @@ ja:
     create: 作成
     delete_confirm: 削除しますか？
     search_word: 検索ワード
+    discard_flag_confirm: 断捨離できましたか？
     flash_message:
       created: "%{item}を作成しました"
       not_created: "%{item}を作成出来ませんでした"
@@ -19,6 +20,7 @@ ja:
       not_updated: "%{item}を更新出来ませんでした"
       deleted: "%{item}を削除しました"
       require_login: ログインしてください
+      discard_flag: 断捨離が完了しました！
   posts:
     index:
       title: 一覧
