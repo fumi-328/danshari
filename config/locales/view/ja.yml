@@ -14,6 +14,7 @@ ja:
     search_word: 検索ワード
     discard_flag_confirm: 断捨離できましたか？
     flash_message:
+      success: ログインしました
       created: "%{item}を作成しました"
       not_created: "%{item}を作成出来ませんでした"
       updated: "%{item}を更新しました"

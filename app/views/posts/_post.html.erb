@@ -21,9 +21,13 @@
 
         </div>
         <p class="card-text py-md-4"><%= post.body %></p>
-          <ul class="list-inline" style="list-style-type: none;">
+        <ul class="list-inline" style="list-style-type: none;">
+          <% if post.deadline %>
             <li><i class="bi bi-alarm"></i><%= post.deadline.strftime(" %m月%d日") %></li>
-          </ul>
+          <% else %>
+            <li><i class="bi bi-alarm"></i> 期限未設定</li>
+          <% end %>
+        </ul>
           <div class='d-flex my-auto '>
 
           <% if !post.discard_flag && current_user == post.user %>

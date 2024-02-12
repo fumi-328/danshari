@@ -28,7 +28,7 @@ class PostsController < ApplicationController
   def update
     @post = current_user.posts.find(params[:id])
     if @post.update(post_params.merge(discard_flag: false))
-      redirect_to post_path(@post), success: t('defaults.flash_message.updated', item: Post.model_name.human)
+      redirect_to posts_path, success: t('defaults.flash_message.updated', item: Post.model_name.human)
     else
       flash.now[:danger] = t('defaults.flash_message.not_updated', item: Post.model_name.human)
       render :edit, status: :unprocessable_entity
