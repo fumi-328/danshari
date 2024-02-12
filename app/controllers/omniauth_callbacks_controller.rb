@@ -19,7 +19,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
     #ログイン後のflash messageとリダイレクト先を設定
     flash[:notice] = "ログインしました"
-    redirect_to root_path
+    redirect_to root_path, success: t('defaults.flash_message.success')
   end
 
   def fake_email(uid, provider)

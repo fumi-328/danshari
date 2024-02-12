@@ -1,0 +1,52 @@
+<div class="col-sm-12 col-lg-6 mb-3">
+  <div id="post-id-<%= post.id %>">
+    <div class="card">
+      <%= image_tag post.post_image_url, class: "card-img-top", width: "300", height:"300" %>
+      <div class="card-body">
+        <div class="d-flex border-bottom">
+          <h4 class="card-title">
+            <%= post.title %>
+          </h4>
+
+          <% if current_user && current_user.own?(post) %>
+          <div class='ms-auto lh-lg'>
+            <%= link_to edit_post_path(post), id: 'button-edit-#{post.id}' do %>
+              <i class="bi bi-pencil-square px-md-2" style="font-size: 1.3rem; color: cornflowerblue;"></i>
+            <% end %>
+            <%= link_to post_path(post), id: "button-delete-#{post.id}", data: { turbo_method: :delete, turbo_confirm: t('defaults.delete_confirm') } do %>
+              <i class="bi bi-trash3-fill" style="font-size: 1.3rem; color: cornflowerblue;"></i>
+            <% end %>
+          </div>
+          <% end %>
+
+        </div>
+        <p class="card-text py-md-4"><%= post.body %></p>
+        <ul class="list-inline" style="list-style-type: none;">
+          <% if post.deadline %>
+            <li><i class="bi bi-alarm"></i><%= post.deadline.strftime(" %m月%d日") %></li>
+          <% else %>
+            <li><i class="bi bi-alarm"></i> 期限未設定</li>
+          <% end %>
+        </ul>
+          <div class='d-flex my-auto '>
+
+          <% if !post.discard_flag && current_user == post.user %>
+          <div class="me-auto">
+          <%= button_to change_discard_flag_post_path(post), method: :patch, class: "btn btn-secondary btn-lg", data: { turbo_confirm: t('defaults.discard_flag_confirm') } do %>
+            <i class="bi bi-stars" style="font-size: 2.5rem; color: yellow;"></i>
+            断捨離完了
+          <% end %>
+        </div>
+        <% end %>
+        
+
+          <div class="ms-auto">
+            <%= link_to '#' do %>
+              <i class="bi bi-trophy-fill" style="font-size: 3.5rem; color: #f6ad49;"></i>
+            <% end %>
+          </div>
+        </div>        
+      </div>
+    </div>
+  </div>
+</div>

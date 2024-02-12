@@ -1,6 +1,38 @@
 ja:
+  helpers:
+    submit:
+      create: 断捨離を始める
+      edit: 更新する
   header:
     login: ログイン/登録
     post_index: 一覧
     create_post: 投稿
     mypage: マイページ
+  defaults:
+    create: 作成
+    delete_confirm: 削除しますか？
+    search_word: 検索ワード
+    discard_flag_confirm: 断捨離できましたか？
+    flash_message:
+      success: ログインしました
+      created: "%{item}を作成しました"
+      not_created: "%{item}を作成出来ませんでした"
+      updated: "%{item}を更新しました"
+      not_updated: "%{item}を更新出来ませんでした"
+      deleted: "%{item}を削除しました"
+      require_login: ログインしてください
+      discard_flag: 断捨離が完了しました！
+  posts:
+    index:
+      title: 一覧
+    new:
+      title: memo作成
+    edit:
+      title: memo編集
+  views:
+    pagination:
+      first: <i class="bi bi-skip-backward-fill"></i>
+      last: <i class="bi bi-skip-forward-fill"></i>
+      previous: <i class="bi bi-skip-start-fill"></i>
+      next: <i class="bi bi-skip-end-fill"></i>
+      truncate: "..."
