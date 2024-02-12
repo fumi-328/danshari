@@ -1,0 +1,10 @@
+<%= search_form_for q, url: url do |f| %>
+  <div class="input-group mb-3">
+    <%= f.search_field :title_or_body_cont, class: 'form-control', placeholder: t('defaults.search_word') %>
+    <span class="fw-bold m-auto bi bi-alarm mx-md-2"> 期限</span>
+    <%= f.select :deadline_lteq, options_for_select(deadline_options), {}, class: 'form-controls me-md-2 rounded' %>
+      <div class="input-group-append">
+        <%= f.submit class: 'btn btn-primary' %>
+      </div>
+  </div>
+<% end %>

@@ -1,13 +1,15 @@
 class PostsController < ApplicationController
 	before_action :authenticate_user!, only: %i[new create edit update destroy]
-
+  
   def index
+    @q = Post.ransack(params[:q])
     if user_signed_in?
-      @posts = Post.includes(:user).page(params[:page])
+      @posts = @q.result.includes(:user).page(params[:page]).order("created_at desc")
     else
-      @posts = Post.all.page(params[:page])
+      @posts = @q.result.page(params[:page]).order("created_at desc")
     end
   end
+
 
 	def new
     @post = Post.new
