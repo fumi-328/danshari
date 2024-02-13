@@ -12,7 +12,13 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = current_user.posts.build(post_params)
+    # フォームから送信されたパラメーターに deadline が含まれている場合、その値を更新する
+    if params[:post][:deadline].blank?
+      @post = current_user.posts.build(post_params.except(:deadline))
+    else
+      @post = current_user.posts.build(post_params)
+    end
+  
     if @post.save
       redirect_to posts_path, success: t('defaults.flash_message.created', item: Post.model_name.human)
     else
@@ -20,6 +26,7 @@ class PostsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+  
 
 	def edit
     @post = current_user.posts.find(params[:id])
@@ -27,13 +34,21 @@ class PostsController < ApplicationController
 
   def update
     @post = current_user.posts.find(params[:id])
-    if @post.update(post_params.merge(discard_flag: false))
+    
+    # フォームから送信された deadline の値を取得し、空の場合は nil を設定する
+    deadline = params[:post].delete(:deadline)
+    
+    # deadline の値が空の場合は nil を設定する
+    @post.update(post_params.merge(deadline: deadline.blank? ? nil : deadline, discard_flag: false))
+  
+    if @post.save
       redirect_to posts_path, success: t('defaults.flash_message.updated', item: Post.model_name.human)
     else
       flash.now[:danger] = t('defaults.flash_message.not_updated', item: Post.model_name.human)
       render :edit, status: :unprocessable_entity
     end
   end
+  
 
   def destroy
     post = current_user.posts.find(params[:id])
@@ -50,6 +65,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body, :post_image, :post_image_cache)
+    params.require(:post).permit(:title, :body, :deadline, :post_image, :post_image_cache)
   end
 end

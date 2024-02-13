@@ -3,7 +3,7 @@ class Post < ApplicationRecord
 	validates :body, presence: true, length: { maximum: 65535 }
 
 	belongs_to :user
-	has_many :praises
+	has_many :praises, dependent: :destroy
 
 	mount_uploader :post_image, PostImageUploader
 
