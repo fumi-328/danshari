@@ -8,7 +8,7 @@ class User < ApplicationRecord
   validates :name, presence: true, uniqueness: true
 
   has_many :posts, dependent: :destroy
-  has_many :praises, dependent: :destroy
+  has_many :praises
   has_many :praise_posts, through: :praises, source: :post
 
   def social_profile(provider)
