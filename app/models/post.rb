@@ -15,7 +15,4 @@ class Post < ApplicationRecord
     ["user"]
   end
 
-	def praises_by?(user)
-		praises.exists?(user_id: user.id)
-	end
 end

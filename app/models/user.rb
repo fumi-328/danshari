@@ -9,6 +9,7 @@ class User < ApplicationRecord
 
   has_many :posts, dependent: :destroy
   has_many :praises
+  has_many :praise_posts, through: :praises, source: :post
 
   def social_profile(provider)
     social_profiles.select { |sp| sp.provider == provider.to_s }.first
@@ -32,5 +33,21 @@ class User < ApplicationRecord
 
   def own?(post)
     self.id == post.user_id
+  end
+
+  def total_praises
+    Post.joins(:praises).where(user_id: id).count
+  end
+
+  def praise(post)
+    praise_posts << post
+  end
+
+  def unpraise(post)
+    praise_posts.destroy(post)
+  end
+
+  def praise?(post)
+    praise_posts.include?(post)
   end
 end

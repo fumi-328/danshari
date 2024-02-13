@@ -47,6 +47,10 @@ class PostsController < ApplicationController
     redirect_to @post, success: t('defaults.flash_message.discard_flag', item: Post.model_name.human)
   end
 
+  def praises
+    @praises_posts = current_user.praise_posts.includes(:user).order(created_at: :desc)
+  end
+
   private
 
   def post_params

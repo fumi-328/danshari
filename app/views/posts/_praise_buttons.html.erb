@@ -1,0 +1,9 @@
+<div class="ms-auto">
+	<% if user_signed_in? %>
+  	<% if current_user.praise?(post) %>
+      <%= render 'unpraise', { post: post } %>
+		<% else %>
+			<%= render 'praise', { post: post } %>
+		<% end %>
+	<% end %>
+</div>

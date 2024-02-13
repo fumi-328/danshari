@@ -1,0 +1,3 @@
+<%= link_to praises_path(post_id: post.id), id: "unpraise-button-for-post-#{post.id}", data: { turbo_method: :post } do %>
+  <i class="bi bi-trophy" style="font-size: 3.5rem; color: #f6ad49;"></i>
+<% end %>
