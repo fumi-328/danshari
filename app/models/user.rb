@@ -8,6 +8,7 @@ class User < ApplicationRecord
   validates :name, presence: true, uniqueness: true
 
   has_many :posts, dependent: :destroy
+  has_many :praises
 
   def social_profile(provider)
     social_profiles.select { |sp| sp.provider == provider.to_s }.first
