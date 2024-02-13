@@ -1,0 +1,3 @@
+<%= turbo_stream.replace "unpraise-button-for-post-#{@post.id}" do %>
+  <%= render 'posts/praise', post: @post %>
+<% end %>
