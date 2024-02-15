@@ -4,11 +4,10 @@
       <%= image_tag 'logo.png' %>
     <% end %>
     <div class='navbar-collapse'>
-      <ul class='navbar-nav ms-auto main-nav align-items-center px-md-5 fs-5'>
+      <ul class='navbar-nav ms-auto main-nav align-items-center px-md-5 fs-6'>
         <li class='nav-item'>
          <%= link_to t('header.post_index'), posts_path, class: 'nav-link' %>
         </li>
-
         <li class='nav-item'>
           <%= link_to t('header.login'), user_line_omniauth_authorize_path, class: 'nav-link' %>
         </li>

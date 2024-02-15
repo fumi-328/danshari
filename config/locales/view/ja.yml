@@ -5,6 +5,7 @@ ja:
       edit: 更新する
   header:
     login: ログイン/登録
+    logout: ログアウト
     post_index: 一覧
     create_post: 投稿
     mypage: マイページ
@@ -13,6 +14,7 @@ ja:
     delete_confirm: 削除しますか？
     search_word: 検索ワード
     discard_flag_confirm: 断捨離できましたか？
+    logout: ログアウトしますか？
     flash_message:
       success: ログインしました
       created: "%{item}を作成しました"
@@ -22,6 +24,7 @@ ja:
       deleted: "%{item}を削除しました"
       require_login: ログインしてください
       discard_flag: 断捨離が完了しました！
+      logout: ログアウトしました
   posts:
     index:
       title: 一覧
