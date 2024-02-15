@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root 'static_pages#top'
+  get 'terms_of_service', to: 'static_pages#terms_of_service'
+  get 'privacy_policy', to: 'static_pages#privacy_policy'
 
   resources :posts, only: %i[index new edit create destroy update] do
     member do

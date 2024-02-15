@@ -1,13 +1,17 @@
-<footer id='footer' class='footer-bottom'>
-<nav class='navbar navbar-expand-lg navigation navbar-light bg-light'>
-  <div class='container'>
-    <div class='row'>
-      <div class='col-sm-6 col-12'>
-        <div class='copyright'>
-          <p>Copyright</p>
-        </div>
-      </div>
+<footer>
+  <nav class='navbar navbar-expand-lg navigation navbar-right bg-light mt-5'>
+    <div class='navbar-collapse'>
+      <ul class='navbar-nav ms-auto main-nav align-items-center px-md-5 fs-6'>
+        <li class='nav-item'>
+          <%= link_to t('defaults.terms_of_service'), terms_of_service_path, class: 'nav-link' %>
+        </li>
+        <li class='nav-item'>
+          <%= link_to t('defaults.privacy_policy'), privacy_policy_path, class: 'nav-link' %>
+        </li>
+        <li class='nav-item'>
+          <%= link_to t('defaults.contact'), "https://forms.gle/UgU5DvgLmzF4SUzV8", class: 'nav-link' %>
+        </li>     
+      </ul>
     </div>
-  </div>
-</nav>
+  </nav>
 </footer>

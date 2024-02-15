@@ -15,6 +15,9 @@ ja:
     search_word: 検索ワード
     discard_flag_confirm: 断捨離できましたか？
     logout: ログアウトしますか？
+    terms_of_service: 利用規約
+    privacy_policy: プライバシーポリシー
+    contact: お問い合わせ
     flash_message:
       success: ログインしました
       created: "%{item}を作成しました"
