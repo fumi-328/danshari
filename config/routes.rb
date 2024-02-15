@@ -2,6 +2,7 @@
 
 Rails.application.routes.draw do
   devise_for :users, controllers: {
+    sessions: 'users/sessions',
     omniauth_callbacks: "omniauth_callbacks"
   }
 
@@ -13,6 +14,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root 'static_pages#top'
+  get 'terms_of_service', to: 'static_pages#terms_of_service'
+  get 'privacy_policy', to: 'static_pages#privacy_policy'
 
   resources :posts, only: %i[index new edit create destroy update] do
     member do
@@ -21,4 +24,5 @@ Rails.application.routes.draw do
   end
 
   resources :praises, only: %i[create destroy]
+  resource :mypage, only: %i[show]
 end

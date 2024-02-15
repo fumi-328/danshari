@@ -39,6 +39,10 @@ class User < ApplicationRecord
     Post.joins(:praises).where(user_id: id).count
   end
 
+  def discard_complete_count
+    posts.where(discard_flag: true).count
+  end
+  
   def praise(post)
     praise_posts << post
   end

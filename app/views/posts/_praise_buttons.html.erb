@@ -3,10 +3,10 @@
 	<ul class="d-flex flex-column bd-highlight mb-2 lh-sm text-center">
   	<% if current_user.praise?(post) %>
 		<i class="bi bi-stars" style="color: #ffd700;"></i>
-      <%= render 'unpraise', { post: post } %>
+      <%= render 'posts/unpraise', { post: post } %>
 		<% else %>
 		<i class="fst-normal"  style="font-size: 0.75rem;">\ えらいね！/</i>
-			<%= render 'praise', { post: post } %>
+			<%= render 'posts/praise', { post: post } %>
 		<% end %>
 	<% end %>
 	</ul>

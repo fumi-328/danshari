@@ -1,0 +1,21 @@
+<% content_for(:title, t('.title')) %>
+<div class="container pt-3">
+    <div class="fs-1 text-center border rounded-pill p-3 mb-4 shadow" >
+    <p class="fw-boldmy-4 ">\ あなたの断捨離memo /</p>
+    <span class="px-3">総えらい数: <%= current_user.total_praises %><i class="bi bi-trophy-fill" style="color: #ffd700;"></i></span>
+    <span>断捨離完了数: <%= current_user.discard_complete_count %><i class="bi bi-stars" style="color: #ffd700;"></i></span>
+    </div>
+  <%= render 'posts/search', q: @q, url: mypage_path %>
+  <div class="row">
+    <div class="col-12">
+      <div class="row">
+        <% if @posts.present? %>
+          <%= render @posts %>
+        <% else %>
+          <div class="mb-3">投稿がありません</div>
+        <% end %>
+      </div>
+      <%= paginate @posts, theme: 'bootstrap-5' %>
+    </div>
+  </div>
+</div>
