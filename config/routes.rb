@@ -21,4 +21,5 @@ Rails.application.routes.draw do
   end
 
   resources :praises, only: %i[create destroy]
+  resource :mypage, only: %i[show]
 end
