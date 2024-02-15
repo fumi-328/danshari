@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
     if user_signed_in?
       super
      else
-      redirect_to root_path, danger: 'ログインしてください'
+      redirect_to root_path, danger: t('defaults.flash_message.require_login')
     end
   end
   
