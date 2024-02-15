@@ -99,3 +99,5 @@ gem 'bootstrap5-kaminari-views', '~> 0.0.1'
 gem 'ransack'
 
 gem 'line-bot-api'
+
+gem 'rack-cors'
