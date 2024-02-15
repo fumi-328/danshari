@@ -29,6 +29,9 @@ ja:
       title: memo作成
     edit:
       title: memo編集
+  mypages:
+    show:
+      title: マイページ
   views:
     pagination:
       first: <i class="bi bi-skip-backward-fill"></i>
