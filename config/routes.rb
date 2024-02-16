@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   root 'static_pages#top'
   get 'terms_of_service', to: 'static_pages#terms_of_service'
   get 'privacy_policy', to: 'static_pages#privacy_policy'
+  post '/webhook', to: 'line_bot#callback'
 
   resources :posts, only: %i[index new edit create destroy update] do
     member do
