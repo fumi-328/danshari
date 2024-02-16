@@ -11,7 +11,11 @@ class PushLineJob < ApplicationJob
             text: "#{post.name}の期限が今日です。断捨離を行いましたか？"
           }
           response = line_client.push_message(post.user.uid, message)
-          logger.info "PushLineSuccess"
+          if response.is_a?(Net::HTTPSuccess) # LINE APIからのレスポンスが成功を示すものである場合
+            logger.info "PushLineSuccess: #{post.name}"
+          else
+            logger.error "PushLineFailed: #{post.name} - #{response.body}"
+          end
         end
       end
     end
