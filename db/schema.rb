@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_13_061905) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_17_083229) do
   create_table "posts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title", null: false
     t.text "body", null: false
@@ -49,6 +49,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_13_061905) do
     t.datetime "updated_at", null: false
     t.string "provider"
     t.string "uid"
+    t.boolean "line_alert", default: true, null: false
   end
 
   add_foreign_key "posts", "users"
