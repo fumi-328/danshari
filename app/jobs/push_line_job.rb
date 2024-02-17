@@ -1,3 +1,5 @@
+require 'line/bot'
+
 class PushLineJob < ApplicationJob
     queue_as :default
   
