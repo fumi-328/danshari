@@ -19,7 +19,6 @@ class PushLineJob < ApplicationJob
             logger.error "PushLineFailed: #{post.title} - #{response.body}"
           end
         end
-        end
       end
     end
   
