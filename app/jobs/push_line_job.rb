@@ -5,19 +5,20 @@ class PushLineJob < ApplicationJob
   
     def perform(*args)
       # 今日がdeadlineのPostレコードを取得
-      posts_today = Post.where(deadline: Date.today)
+      posts_today = Post.where("DATE(deadline) = ?", Date.today)
       posts_today.each do |post|
         if post.user.line_alert == true
           message = {
             type: 'text',
-            text: "#{post.name}の期限が今日です。断捨離を行いましたか？"
+            text: "#{post.title}の期限が今日です。断捨離を行いましたか？"
           }
           response = line_client.push_message(post.user.uid, message)
           if response.is_a?(Net::HTTPSuccess) # LINE APIからのレスポンスが成功を示すものである場合
-            logger.info "PushLineSuccess: #{post.name}"
+            logger.info "PushLineSuccess: #{post.title}"
           else
-            logger.error "PushLineFailed: #{post.name} - #{response.body}"
+            logger.error "PushLineFailed: #{post.title} - #{response.body}"
           end
+        end
         end
       end
     end
