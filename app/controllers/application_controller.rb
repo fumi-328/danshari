@@ -7,17 +7,17 @@ class ApplicationController < ActionController::Base
   def authenticate_user!
     if user_signed_in?
       super
-     else
+    else
       redirect_to root_path, danger: t('defaults.flash_message.require_login')
     end
   end
-  
+
   protected
-  
+
   def configure_permitted_parameters
-  	# サインアップ時にnameを許可する
-  	devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
-  	# アカウント情報の更新時にnameを許可する
-  	devise_parameter_sanitizer.permit(:account_update, keys: [:name])
+    # サインアップ時にnameを許可する
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+    # アカウント情報の更新時にnameを許可する
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name])
   end
 end

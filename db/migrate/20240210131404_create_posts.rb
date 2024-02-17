@@ -6,7 +6,7 @@ class CreatePosts < ActiveRecord::Migration[7.1]
       t.references :user, foreign_key: true
       t.boolean :discard_flag, default: false
       t.datetime :deadline
-      
+
       t.timestamps
     end
   end

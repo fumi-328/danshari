@@ -3,7 +3,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
     sessions: 'users/sessions',
-    omniauth_callbacks: "omniauth_callbacks"
+    omniauth_callbacks: 'omniauth_callbacks'
   }
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   root 'static_pages#top'
   get 'terms_of_service', to: 'static_pages#terms_of_service'
   get 'privacy_policy', to: 'static_pages#privacy_policy'
+  post '/webhook', to: 'line_bot#callback'
 
   resources :posts, only: %i[index new edit create destroy update] do
     member do
