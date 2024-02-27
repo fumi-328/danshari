@@ -99,3 +99,6 @@ gem 'ransack'
 gem 'line-bot-api'
 
 gem 'rack-cors'
+
+gem 'fog-aws'
+gem "aws-sdk-s3", require: false 
