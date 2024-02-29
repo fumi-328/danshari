@@ -3,9 +3,12 @@ ja:
     models:
       user: ユーザー
       post: 断捨離memo
+      comment: コメント
     attributes:
       post:
         post_image: 画像
         title: 名称
         body: なぜ捨てる？
         deadline: 期限日
+      comment:
+        body: コメント

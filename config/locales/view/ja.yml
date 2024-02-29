@@ -11,6 +11,7 @@ ja:
     mypage: マイページ
   defaults:
     create: 作成
+    post: 投稿
     delete_confirm: 削除しますか？
     search_word: 検索ワード
     discard_flag_confirm: 断捨離できましたか？
