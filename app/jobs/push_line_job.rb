@@ -10,7 +10,7 @@ class PushLineJob < ApplicationJob
         if post.user.line_alert == true
           message = {
             type: 'text',
-            text: "#{post.title}の期限が今日です。断捨離を行いましたか？"
+            text: "「#{post.title}」の期限が今日です。断捨離を行いましたか？"
           }
           response = line_client.push_message(post.user.uid, message)
           if response.is_a?(Net::HTTPSuccess) # LINE APIからのレスポンスが成功を示すものである場合
