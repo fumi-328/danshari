@@ -9,6 +9,7 @@ class User < ApplicationRecord
 
   has_many :posts, dependent: :destroy
   has_many :praises, dependent: :destroy
+  has_many :comments, dependent: :destroy
   has_many :praise_posts, through: :praises, source: :post
 
   def social_profile(provider)
@@ -33,7 +34,7 @@ class User < ApplicationRecord
   end
 
   def own?(post)
-    id == post.user_id
+    id == post&.user_id
   end
 
   def total_praises
