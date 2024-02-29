@@ -5,9 +5,12 @@
       <div class="card-body">
         <div class="d-flex border-bottom">
           <h4 class="card-title">
-            <%= link_to post.title, post_path(post) %>
+            <% if user_signed_in? %>
+              <%= link_to post.title, post_path(post) %>
+            <% else %>
+              <%= post.title %>
+            <% end %>
           </h4>
-
           <% if current_user && current_user.own?(post) %>
           <div class='ms-auto lh-lg'>
             <%= link_to edit_post_path(post), id: 'button-edit-#{post.id}' do %>
@@ -18,7 +21,6 @@
             <% end %>
           </div>
           <% end %>
-
         </div>
         <p class="card-text py-md-4"><%= post.body %></p>
         <ul class="list-inline" style="list-style-type: none;">
