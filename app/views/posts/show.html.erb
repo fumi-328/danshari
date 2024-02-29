@@ -11,10 +11,10 @@
               <h3 style="display: inline;"><%= @post.title %></h3>
               <% if current_user && current_user.own?(@post) %>
               <div class='ms-auto lh-lg'>
-              	<%= link_to edit_post_path(post), id: 'button-edit-#{post.id}' do %>
+              	<%= link_to edit_post_path(@post), id: 'button-edit-#{@post.id}' do %>
                   <i class="bi bi-pencil-square px-md-2" style="font-size: 1.3rem; color: cornflowerblue;"></i>
                 <% end %>
-                <%= link_to post_path(post), id: "button-delete-#{post.id}", data: { turbo_method: :delete, turbo_confirm: t('defaults.delete_confirm') } do %>
+                <%= link_to post_path(@post), id: "button-delete-#{@post.id}", data: { turbo_method: :delete, turbo_confirm: t('defaults.delete_confirm') } do %>
                   <i class="bi bi-trash3-fill" style="font-size: 1.3rem; color: cornflowerblue;"></i>
                 <% end %>
               </div>
