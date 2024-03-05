@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   post '/webhook', to: 'line_bot#callback'
 
   resources :posts, only: %i[index new edit create destroy update show] do
-    resources :comments, only: %i[create edit destroy], shallow: true
+    resources :comments, only: %i[create destroy], shallow: true
 
     member do
       patch :change_discard_flag
