@@ -5,10 +5,9 @@ class CommentsController < ApplicationController
     end
     
     def destroy
-        @comment = current_user.comments.find_by(post_id: @post.id)
+        @comment = current_user.comments.find(params[:id])
         @comment.destroy!
-    end
-  
+      end
     private
   
     def comment_params
