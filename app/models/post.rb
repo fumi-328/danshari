@@ -4,6 +4,7 @@ class Post < ApplicationRecord
 
   belongs_to :user
   has_many :praises, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   mount_uploader :post_image, PostImageUploader
 

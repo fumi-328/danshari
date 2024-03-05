@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: %i[new create edit update destroy]
+  before_action :authenticate_user!, only: %i[new create edit update destroy show]
 
   def index
     @q = Post.ransack(params[:q])
@@ -52,6 +52,12 @@ class PostsController < ApplicationController
     post.destroy!
     redirect_to posts_path, success: t('defaults.flash_message.deleted', item: Post.model_name.human),
                             status: :see_other
+  end
+
+  def show
+    @post = Post.find(params[:id])
+    @comment = Comment.new
+    @comments = @post.comments.includes(:user).order(created_at: :desc)
   end
 
   def change_discard_flag
