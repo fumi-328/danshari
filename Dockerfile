@@ -2,7 +2,7 @@ FROM ruby:3.2.2
 
 RUN apt-get update -qq && apt-get install -y build-essential default-mysql-client
 
-ENV RAILS_ENV=production
+ENV RAILS_ENV=development
 
 ENV app_path /rails_app
 RUN mkdir ${app_path}
