@@ -63,7 +63,7 @@ class PostsController < ApplicationController
   def change_discard_flag
     @post = Post.find(params[:id])
     @post.update(discard_flag: true)
-    redirect_to @post, success: t('defaults.flash_message.discard_flag', item: Post.model_name.human)
+    redirect_to mypage_path, success: t('defaults.flash_message.discard_flag', item: Post.model_name.human)
   end
 
   private
