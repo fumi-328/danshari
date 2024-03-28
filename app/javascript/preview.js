@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function(){
   console.log("previewList: ", previewList);
   
   if (!postForm) return null;
+  console.log("preview.jsが読み込まれました");
 
   const fileField = document.querySelector('input[type="file"][name="post[post_image]"]');
   console.log("fileField: ", fileField);
