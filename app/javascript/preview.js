@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function(){
   if (!postForm) return null;
 
   // input要素を取得。name情報は検証ツールから確認すること！！
-  const fileField = document.querySelector('input[type="file"][name="post[image]"]');
+  const fileField = document.querySelector('input[type="file"][name="post[post_image]"]');
   // input要素で値の変化が起きた際に呼び出される関数
   fileField.addEventListener('change', function(e){
   // 古いプレビューが存在する場合は削除(最後に記述する)
