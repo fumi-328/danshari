@@ -1,5 +1,5 @@
-document.addEventListener('turbolinks:load', function(){
-  console.log("DOM fully loaded and parsed with Turbolinks");
+document.addEventListener('turbo:load', function(){
+  console.log("DOM fully loaded and parsed with Turbo");
   
   const postForm = document.getElementById('new_post');
   console.log("postForm: ", postForm);
