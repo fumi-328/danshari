@@ -5,8 +5,8 @@
         <%= f.file_field :post_image, class: "form-control", accept: 'image/*' %>
         <%= f.hidden_field :post_image_cache %>
     </div>
-    <% if @post.post_image.attached? %>
-      <div id="existing-preview" data-image-url="<%= url_for(@post.post_image) %>"></div>
+    <% if @post.post_image.file? %>
+      <div id="existing-preview" data-image-url="<%= @post.post_image.url %>"></div>
     <% end %>
     <div id="previews"></div>
     <div class="mb-3">
