@@ -6,7 +6,9 @@
         <%= f.hidden_field :post_image_cache %>
     </div>
     <% if @post.post_image.url.present? %>
-      <div id="existing-preview" data-image-url="<%= @post.post_image.url %>"></div>
+      <div id="existing-preview">
+        <img src="<%= @post.post_image.url %>">
+      </div>
     <% end %>
     <div id="previews"></div>
     <div class="mb-3">
