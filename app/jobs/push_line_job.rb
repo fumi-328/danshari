@@ -5,7 +5,7 @@ class PushLineJob < ApplicationJob
   
     def perform(*args)
       # 今日がdeadlineのPostレコードを取得
-      posts_today = Post.where("DATE(deadline) = ?", Date.today)
+      posts_today = Post.where("DATE(deadline) = ? AND discard_flag = ?", Date.today, false)
       posts_today.each do |post|
         if post.user.line_alert == true
           message = {
