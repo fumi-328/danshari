@@ -19,7 +19,7 @@ class PostImageUploader < CarrierWave::Uploader::Base
   end
 
   # Process files as they are uploaded:
-  process resize_and_pad: [300, 360, 'white']
+  process resize_and_pad: [634, 360, 'white']
   #
   # def scale(width, height)
   #   # do something
