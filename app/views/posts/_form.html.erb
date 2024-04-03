@@ -2,7 +2,7 @@
   <%= render 'shared/error_messages', object: f.object %>
     <% if @post.post_image? %>
       <div class="col-md-3">
-        <span class="small" >登録している画像</span>
+        <span class="small" >（ 登録している画像 ）</span>
         <%= image_tag @post.post_image_url, width: "300", height: "200", class: "card-img-top img-fluid" %>
       </div>
     <% end %>  
