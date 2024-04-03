@@ -6,11 +6,6 @@
         <%= f.hidden_field :post_image_cache %>
     </div>
     <div id="previews"></div>
-    <% if @post.post_image? %>
-      <div id="existing-preview"><span class="text-danger small" >現在の画像</span>
-        <img src="<%= @post.post_image.url %>">
-      </div>
-    <% end %>
     <div class="mb-3">
       <%= f.label :title %><span class="text-danger small" >*必須</span>
       <%= f.text_field :title, class: "form-control" %>

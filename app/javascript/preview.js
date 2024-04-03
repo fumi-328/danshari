@@ -10,23 +10,6 @@ document.addEventListener('turbo:load', function(){
   if (!postForm) return null;
   console.log("preview.jsが読み込まれました");
 
-  // 既に登録されている画像を初期状態で表示する処理
-  const existingImage = document.getElementById('existing_image');
-  if (existingImage) {
-    const existingImageUrl = existingImage.dataset.imageUrl;
-    if (existingImageUrl) {
-      const previewWrapper = document.createElement('div');
-      previewWrapper.setAttribute('class', 'preview');
-
-      const previewImage = document.createElement('img');
-      previewImage.setAttribute('class', 'preview-image');
-      previewImage.setAttribute('src', existingImageUrl);
-
-      previewWrapper.appendChild(previewImage);
-      previewList.appendChild(previewWrapper);
-    }
-  }
-
   const fileField = document.querySelector('input[type="file"][name="post[post_image]"]');
   if (!fileField){
     console.log("fileField is not found.");
