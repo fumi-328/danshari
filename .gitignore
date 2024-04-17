@@ -44,6 +44,6 @@
 /server.key
 
 /.vscode/*
-/app/assets/.DS_Store
+/assets/.DS_Store
 /app/.DS_Store
 /.DS_Store
