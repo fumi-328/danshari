@@ -59,6 +59,7 @@ SNS（XやInstagram）にて断捨離についてお話しをしている方を�
 
 ### 本リリース
 * 他ユーザーからのコメント機能
+* 投稿時のプレビュー機能
 
 ## 機能の実装方針予定
 -一般的なCRUD以外の実装予定の機能についてそれぞれどのようなイメージ(使用するAPIや)で実装する予定なのか現状考えているもので良いので教えて下さい。
@@ -105,3 +106,4 @@ Figma：https://www.figma.com/file/lWkYuoR51vhuPJw90Rn2HP/%E7%84%A1%E9%A1%8C?typ
 
 ### ER図
 https://drive.google.com/file/d/1u_5qRBR6gLWkAbiBXrTsFUEd_Aa6KNeu/view?usp=sharing
+[![Image from Gyazo](https://i.gyazo.com/02571bcb4f2b104f5e0c0a45b1e0cd91.png)](https://gyazo.com/02571bcb4f2b104f5e0c0a45b1e0cd91)

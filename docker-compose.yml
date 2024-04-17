@@ -21,6 +21,14 @@ services:
     tty: true
     depends_on:
       - db
+      - chrome
+    environment:
+      TZ: Asia/Tokyo
+      SELENIUM_DRIVER_URL: http://chrome:4444/wd/hub
+  chrome:
+    image: seleniarm/standalone-chromium:latest
+    ports:
+      - 4444:4444
 
 volumes:
   mysql_data:
